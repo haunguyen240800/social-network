@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url("./assets/css/bootstrap-datetimepicker.css"); */
+@import url("./assets/css/style.css");
+@import url("./assets/css/emoji.css");
+@import url("./assets/css/feather.css");
+@import url("./assets/css/lightbox.css");
+/* @import url("./assets/css/style-rtl.css"); */
+@import url("./assets/css/themify-icons.css");
+@import url("./assets/css/video-player.css");
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
