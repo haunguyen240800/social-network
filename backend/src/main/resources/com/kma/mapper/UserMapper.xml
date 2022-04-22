@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Converted at: Thu Mar 12 15:27:16 
+	ICT 2020 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kma.dao.UserDAO">
+	
+	<resultMap id="userMap" type="com.kma.model.User">
+    	<id column="user_id" jdbcType="BIGINT" property="userId" />
+    	<result property="username" column="username" />
+		<result property="email" column="email" />
+		<result property="password" column="password" />
+    	<collection property="roles" javaType="ArrayList" column="role_id" ofType="com.kma.model.Role">
+			<result property="roleId" column="role_id" />
+			<result property="roleName" column="role_name" />
+		</collection>
+	</resultMap>
+
+    <select id="findByUsername" parameterType="String" resultMap="userMap">
+        SELECT *
+        FROM user u 
+        	INNER JOIN user_role ur ON u.user_id = ur.user_id
+        	INNER JOIN role r ON ur.role_id = r.role_id
+        WHERE
+        	u.username = #{username}
+    </select>
+    
+    <select id="existsByEmail" parameterType="String" resultType="Integer">
+        SELECT count(*)
+        FROM user u 
+        WHERE u.email = #{email}
+    </select>
+    
+    <select id="existsByUsername" parameterType="String" resultType="Integer">
+        SELECT count(*)
+        FROM user u 
+        WHERE u.username = #{username}
+    </select> 
+    
+    <insert id="save" parameterType="com.kma.model.User" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+        INSERT INTO user (
+        	username,
+        	password,
+        	email
+        ) VALUES (
+        	#{username},
+        	#{password},
+        	#{email}
+        )
+    </insert>
+    
+    <insert id="saveUserRole" parameterType="com.kma.model.Role" useGeneratedKeys="true" keyProperty="roleId" keyColumn="role_id">
+        INSERT INTO user (
+        	role_name
+        ) VALUES (
+        	#{roleName}
+        )
+    </insert>
+	
+</mapper>
