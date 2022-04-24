@@ -1,4 +1,4 @@
-package com.kma.config.authorization;
+package com.kma.config.security.authorization;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kma.config.jwt.JwtUtils;
+import com.kma.config.security.jwt.JwtUtils;
 import com.kma.dto.UserDetailsImpl;
 import com.kma.model.User;
 import com.kma.model.request.LoginRequest;

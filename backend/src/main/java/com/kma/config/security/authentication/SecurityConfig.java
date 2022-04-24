@@ -1,4 +1,4 @@
-package com.kma.config.authenticaton;
+package com.kma.config.security.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -13,8 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.kma.config.filter.AuthTokenFilter;
-import com.kma.config.jwt.AuthEntryPointJwt;
+import com.kma.config.security.filter.AuthTokenFilter;
+import com.kma.config.security.jwt.AuthEntryPointJwt;
 import com.kma.service.UserDetailsService;
 
 //@Configuration

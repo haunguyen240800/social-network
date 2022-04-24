@@ -1,4 +1,4 @@
-package com.kma.config.filter;
+package com.kma.config.security.filter;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.kma.config.jwt.JwtUtils;
+import com.kma.config.security.jwt.JwtUtils;
 import com.kma.service.UserDetailsService;
 
 public class AuthTokenFilter extends OncePerRequestFilter{

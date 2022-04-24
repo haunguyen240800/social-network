@@ -1,4 +1,4 @@
-package com.kma.config.jwt;
+package com.kma.config.security.jwt;
 
 import java.util.Date;
 
